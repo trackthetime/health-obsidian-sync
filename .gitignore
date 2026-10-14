@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# All real local configuration and exported records stay outside Git.
+*.json
+!config.example.json
+*.csv
+*.xlsx
+*.xls
+*.zip
+*.xml
+data/
+archive/
+output/
+vault/
+DailyBlocks/
+TrainingLogs/
+Health Data Export/
+last_run.json
+.obsidian/
+*.log
+*.md.tmp

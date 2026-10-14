@@ -1,0 +1,214 @@
+.health-space {
+  --health-accent: #35b9a0;
+  --health-blue: #648ff1;
+  --health-amber: #e8aa57;
+  --health-rose: #e68a9a;
+  --health-line: var(--background-modifier-border);
+}
+
+.health-space .markdown-preview-sizer,
+.health-space .cm-contentContainer { max-width: 1180px; }
+
+.health-space .health-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px 28px;
+  margin: .8em 0 1.4em;
+  border: 1px solid color-mix(in srgb, var(--health-accent) 35%, var(--health-line));
+  border-radius: 18px;
+  background: linear-gradient(120deg, color-mix(in srgb, var(--health-accent) 18%, var(--background-primary)), color-mix(in srgb, var(--health-blue) 8%, var(--background-primary)));
+}
+.health-space .health-hero span {
+  color: var(--health-accent);
+  font-size: .78em;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.health-space .health-hero strong {
+  color: var(--text-normal);
+  font-size: clamp(1.25em, 2vw, 1.8em);
+  line-height: 1.2;
+}
+.health-space .health-hero small { color: var(--text-muted); }
+
+.health-space h1 {
+  font-size: 1.7em;
+  letter-spacing: .02em;
+  margin-bottom: .25em;
+}
+
+.health-space h2 {
+  margin-top: 1.8em;
+  padding-bottom: .3em;
+  border-bottom: 1px solid var(--health-line);
+}
+
+.health-space .health-updated {
+  color: var(--text-muted);
+  font-size: .82em;
+  margin: -.2em 0 1.3em;
+}
+
+.health-space .health-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  gap: 12px;
+  margin: 1.2em 0 1.8em;
+}
+
+.health-space .health-stat {
+  display: flex;
+  flex-direction: column;
+  gap: .3em;
+  min-height: 108px;
+  padding: 16px 18px;
+  border: 1px solid var(--health-line);
+  border-top: 3px solid var(--health-accent);
+  border-radius: 13px;
+  background: color-mix(in srgb, var(--health-accent) 6%, var(--background-primary));
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .05);
+}
+.health-space .health-stat:nth-child(4n + 2) { border-top-color: var(--health-blue); }
+.health-space .health-stat:nth-child(4n + 3) { border-top-color: var(--health-amber); }
+.health-space .health-stat:nth-child(4n + 4) { border-top-color: var(--health-rose); }
+.health-space .health-stat:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.09); }
+
+.health-space .health-stat-label {
+  color: var(--text-muted);
+  font-size: .78em;
+}
+
+.health-space .health-stat strong {
+  color: var(--text-normal);
+  font-size: 1.45em;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.health-space .health-stat small {
+  color: var(--text-muted);
+  font-size: .7em;
+}
+
+.health-space table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  margin: .8em 0 1.2em;
+  overflow: hidden;
+  border: 1px solid var(--health-line);
+  border-radius: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.health-space table th {
+  background: color-mix(in srgb, var(--interactive-accent) 12%, var(--background-secondary));
+  color: var(--text-normal);
+  font-weight: 650;
+}
+
+.health-space table td,
+.health-space table th {
+  padding: .55em .7em;
+  border-right: 1px solid var(--health-line);
+  border-bottom: 1px solid var(--health-line);
+}
+
+.health-space table tr:last-child td { border-bottom: 0; }
+.health-space table td:last-child,
+.health-space table th:last-child { border-right: 0; }
+.health-space table tr:hover td {
+  background: color-mix(in srgb, var(--interactive-accent) 6%, var(--background-primary));
+}
+
+.health-space table:has(th:nth-child(7)) {
+  min-width: 660px;
+  table-layout: fixed;
+}
+
+.health-space table:has(th:nth-child(7)) td {
+  height: 78px;
+  vertical-align: top;
+  font-size: .82em;
+}
+
+.health-space table:has(th:nth-child(7)) td strong {
+  display: inline-block;
+  margin-bottom: .25em;
+  color: var(--health-accent);
+}
+
+.health-space .callout {
+  border-radius: 10px;
+  margin: 1em 0;
+}
+
+.health-space .callout[data-callout="health-nav"] {
+  --callout-color: 53, 185, 160;
+  --callout-icon: lucide-layout-dashboard;
+  border: 1px solid var(--health-line);
+  background: var(--background-secondary);
+  padding: 8px 12px 14px;
+}
+.health-space .callout[data-callout="health-nav"] .callout-title { padding: 8px 10px; }
+.health-space .callout[data-callout="health-nav"] .callout-content ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+}
+.health-space .callout[data-callout="health-nav"] .callout-content li {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--health-line);
+  border-radius: 11px;
+  background: var(--background-primary);
+  color: var(--text-muted);
+  font-size: .83em;
+  line-height: 1.55;
+}
+.health-space .callout[data-callout="health-nav"] .callout-content li:hover {
+  border-color: var(--health-accent);
+  background: color-mix(in srgb, var(--health-accent) 7%, var(--background-primary));
+}
+.health-space .callout[data-callout="health-nav"] .callout-content li a {
+  display: block;
+  color: var(--text-normal);
+  font-size: 1.14em;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.health-space .health-calendar-legend { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+.health-space .health-calendar-legend span {
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--health-line);
+  font-size: .75em;
+}
+.health-space .health-calendar-legend .health-level-0 { background: var(--background-secondary); }
+.health-space .health-calendar-legend .health-level-1 { background: color-mix(in srgb, var(--health-accent) 12%, var(--background-primary)); }
+.health-space .health-calendar-legend .health-level-2 { background: color-mix(in srgb, var(--health-accent) 26%, var(--background-primary)); }
+.health-space .health-calendar-legend .health-level-3 { background: color-mix(in srgb, var(--health-accent) 43%, var(--background-primary)); }
+.health-space .health-day-marker { display: none; }
+.health-space table:has(th:nth-child(7)) td:has(.health-level-1) { background: color-mix(in srgb, var(--health-accent) 12%, var(--background-primary)); }
+.health-space table:has(th:nth-child(7)) td:has(.health-level-2) { background: color-mix(in srgb, var(--health-accent) 25%, var(--background-primary)); }
+.health-space table:has(th:nth-child(7)) td:has(.health-level-3) { background: color-mix(in srgb, var(--health-accent) 40%, var(--background-primary)); }
+.health-space table:has(th:nth-child(7)) td a { font-size: .88em; }
+
+.health-space .block-language-chart {
+  padding: 14px;
+  border: 1px solid var(--health-line);
+  border-radius: 12px;
+  background: var(--background-primary);
+  box-shadow: 0 5px 22px rgba(0,0,0,.04);
+}
+
+@media (max-width: 680px) {
+  .health-space .health-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .health-space .health-stat { padding: 12px; min-height: 94px; }
+  .health-space .health-stat strong { font-size: 1.18em; }
+}
